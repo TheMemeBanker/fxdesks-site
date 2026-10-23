@@ -1,14 +1,14 @@
 :root {
-  --fxb: #0f8f8a;        /* FX teal — the desk's own accent (rebrand v9, 2026-10-06) */
-  --fxb-hi: #13a7a1;
+  --fxb: #5b3fb8;        /* FX violet — the desk's own accent (rebrand v10, 2026-10-23) */
+  --fxb-hi: #6f52cc;
   --fxb-ink: #ffffff;
   --fxb-soft: color-mix(in srgb, var(--fxb) 10%, var(--paper));
   --fxb-line: color-mix(in srgb, var(--fxb) 34%, var(--frame));
 }
 [data-theme="dark"] {
-  --fxb: #4fd6cf;
-  --fxb-hi: #7ae4de;
-  --fxb-ink: #063a38;
+  --fxb: #b9a6ff;
+  --fxb-hi: #cbbcff;
+  --fxb-ink: #1d1340;
   --fxb-soft: color-mix(in srgb, var(--fxb) 16%, var(--paper));
   --fxb-line: color-mix(in srgb, var(--fxb) 40%, var(--frame));
 }
@@ -27,10 +27,11 @@ body { font-family: var(--font-mono); }
 .fx-header { display: flex; align-items: center; gap: 14px; padding: 18px 0 14px; }
 .fx-brand { display: flex; flex-shrink: 0; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
 .fx-brand-logo { display: block; height: 26px; width: 26px; image-rendering: pixelated; }
-.fx-brand-word { position: relative; display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .09em; white-space: nowrap; color: var(--ink); padding: 3px 9px 3px 8px; border: 1.5px solid var(--fxb); border-radius: 4px; line-height: 1; }
-.fx-brand-word::before { content: ""; position: absolute; inset: 2px; border: 1px dashed color-mix(in srgb, var(--fxb) 55%, transparent); border-radius: 2px; pointer-events: none; }
-.fx-brand-word::after { content: ""; position: absolute; right: 3px; bottom: 3px; width: 3px; height: 3px; border-radius: 999px; background: var(--alert); }
-.fx-brand:hover .fx-brand-word { background: var(--fxb-soft); }
+.fx-brand-word { position: relative; display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .09em; white-space: nowrap; color: var(--ink); padding: 2px 2px 7px; line-height: 1; }
+/* balance motif: the wordmark rests on a thin violet beam with a centred fulcrum below it */
+.fx-brand-word::before { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 1.5px; background: var(--fxb); border-radius: 1px; pointer-events: none; }
+.fx-brand-word::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 0; height: 0; transform: translateX(-50%); border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 3px solid var(--alert); }
+.fx-brand:hover .fx-brand-word::before { background: var(--fxb-hi); }
 .fx-nav { margin-right: 2px; }
 .fx-nav a { text-decoration: none; }
 .fx-iconbtn { display: grid; place-items: center; height: 28px; width: 28px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }

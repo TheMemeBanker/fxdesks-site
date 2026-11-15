@@ -3,11 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FX Desks — every currency, in balance</title>
-<meta name="description" content="Every currency, in balance — live mid-market rates for majors, crosses and exotics, and a converter that settles at the ECB reference fix.">
-<link rel="icon" type="image/png" href="./favicon-scale.png">
+<title>FX Desks — one currency in, every currency out</title>
+<meta name="description" content="One currency in, every currency out. Live mid-market rates for majors, crosses and exotics, and a converter set at the ECB reference fix.">
+<link rel="icon" type="image/png" href="./favicon-prism.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-prism.png">
 <meta property="og:title" content="FX Desks">
-<meta property="og:description" content="Every currency, in balance — live rates, crosses, and a mid-market converter.">
+<meta property="og:description" content="One currency in, every currency out — live rates, crosses, and a mid-market converter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fxdesks.cash/">
+<meta property="og:image" content="https://fxdesks.cash/og-prism.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fxdesks.cash/og-prism.png">
 <meta name="theme-color" content="#141414">
 <link rel="stylesheet" href="./theirs.css">
 <link rel="stylesheet" href="./fx.css">
@@ -20,11 +28,11 @@
   <!-- ── Header ─────────────────────────────────────────── -->
   <header class="fx-header">
     <a href="#top" class="fx-brand" aria-label="FX Desks home">
-      <img src="./logo-scale.png" alt="" width="26" height="26" class="fx-brand-logo" draggable="false">
+      <img src="./logo-prism.png" alt="" width="26" height="26" class="fx-brand-logo" draggable="false">
       <span class="fx-brand-word">FX DESKS</span>
     </a>
     <div class="fx-sibs">
-      <a id="fxTokenLink" class="fx-sib" href="https://pump.fun/coin/GTgVtDjaa23Wz6V7NJW7RY81hrUzdYmJMYZG75o3pump" target="_blank" rel="noopener">$FOREX</a>
+      <a id="fxTokenLink" class="fx-sib" aria-disabled="true" tabindex="-1">$FXD</a>
       <a class="fx-sib" href="https://otcdesks.cash/" target="_blank" rel="noopener">OTC</a>
     </div>
     <nav aria-label="Main" class="ml-auto flex min-w-0 items-center gap-4 overflow-x-auto no-scrollbar fx-nav">
@@ -90,7 +98,7 @@
     <!-- ── Converter ────────────────────────────────────── -->
     <section id="converter" class="fx-section">
       <h2 class="fx-h2">Converter</h2>
-      <p class="fx-sub">Mid-market, straight off the reference fix. No spread, no fees — the honest number the banks start from.</p>
+      <p class="fx-sub">Put one currency in. Mid-market, straight off the reference fix — no spread, no fees, the number the banks start from.</p>
       <div class="fx-conv rounded-[20px] bg-paper-2/40 pb-[1px]">
         <div class="mt-2 rounded-[18px] border border-line bg-paper p-4 fx-conv-in">
           <div class="fx-conv-grid">
@@ -121,10 +129,10 @@
     <div class="grid gap-x-6 gap-y-9 sm:grid-cols-[minmax(0,1fr)_auto]">
       <div class="max-w-[230px]">
         <div class="flex items-center gap-2">
-          <img alt="" draggable="false" width="22" height="22" class="block h-[22px] w-[22px] select-none" src="./logo-scale.png">
+          <img alt="" draggable="false" width="22" height="22" class="block h-[22px] w-[22px] select-none" src="./logo-prism.png">
           <span class="text-[12px] font-bold tracking-[0.06em] text-ink">FX DESKS</span>
         </div>
-        <p class="mt-3 text-[10.5px] leading-relaxed text-muted">Every currency, in balance — live mid-market rates, majors to exotics, and a converter that settles at the reference fix.</p>
+        <p class="mt-3 text-[10.5px] leading-relaxed text-muted">One currency in, every currency out — live mid-market rates, majors to exotics, and a converter that settles at the reference fix.</p>
       </div>
       <nav aria-label="Footer" class="grid grid-cols-2 gap-x-8 gap-y-7 text-[11px] sm:grid-cols-3 sm:gap-x-11">
         <div><p class="mb-3 text-[9px] uppercase tracking-[0.14em] text-muted/50">Protocol</p><ul class="space-y-2">

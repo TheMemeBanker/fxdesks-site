@@ -1,20 +1,20 @@
+/* rebrand v12 (2026-11-23): THE MONOGRAM. One brand colour, gold, carried by the tile the
+   FX sits on; the X in the mark is two exchange arrows, so every gold rule on the page ends
+   the same way the mark does. Spectrum, prism and the ink accent retired. */
 :root {
-  /* rebrand v11 (2026-11-15): PRISM. The spectrum is the only brand colour on the page —
-     the desk accent itself is ink, so one beam in / five bands out carries the identity. */
-  --fxb: #17170f;
-  --fxb-hi: #3a382f;
-  --fxb-ink: #f7f4ea;
-  --fxb-soft: color-mix(in srgb, var(--fxb) 8%, var(--paper));
-  --fxb-line: color-mix(in srgb, var(--fxb) 30%, var(--frame));
-  --sp-r: #cc2f26; --sp-a: #eca82c; --sp-g: #34ba76; --sp-b: #2b4fd8; --sp-v: #7048c8;
-  --spectrum: linear-gradient(90deg, var(--sp-r) 0 20%, var(--sp-a) 20% 40%, var(--sp-g) 40% 60%, var(--sp-b) 60% 80%, var(--sp-v) 80% 100%);
+  --fxb: #a8740a;
+  --fxb-hi: #c48a12;
+  --fxb-ink: #141414;
+  --fxb-tile: #e8b23a;
+  --fxb-soft: color-mix(in srgb, var(--fxb) 12%, var(--paper));
+  --fxb-line: color-mix(in srgb, var(--fxb) 40%, var(--frame));
 }
 [data-theme="dark"] {
-  --fxb: #eaeaea;
-  --fxb-hi: #ffffff;
+  --fxb: #e8b23a;
+  --fxb-hi: #f5c452;
   --fxb-ink: #141414;
-  --fxb-soft: color-mix(in srgb, var(--fxb) 12%, var(--paper));
-  --fxb-line: color-mix(in srgb, var(--fxb) 36%, var(--frame));
+  --fxb-soft: color-mix(in srgb, var(--fxb) 14%, var(--paper));
+  --fxb-line: color-mix(in srgb, var(--fxb) 42%, var(--frame));
 }
 
 /* FX Desks — components on top of the OTC design tokens (theirs.css).
@@ -30,16 +30,17 @@ body { font-family: var(--font-mono); }
 /* header */
 .fx-header { display: flex; align-items: center; gap: 14px; padding: 18px 0 14px; }
 .fx-brand { display: flex; flex-shrink: 0; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
-.fx-brand-logo { display: block; height: 26px; width: 26px; image-rendering: pixelated; }
+.fx-brand-logo { display: block; height: 26px; width: 26px; border-radius: 6px; }
 .fx-brand-word { position: relative; display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .09em; white-space: nowrap; color: var(--ink); padding: 2px 2px 6px; line-height: 1; }
-/* prism motif: the wordmark sits on the dispersed beam — a five-band spectrum rule */
-.fx-brand-word::before { content: ""; position: absolute; left: 2px; right: 2px; bottom: 2px; height: 2px; background: var(--spectrum); border-radius: 1px; opacity: .9; pointer-events: none; transition: opacity .15s ease; }
-.fx-brand:hover .fx-brand-word::before { opacity: 1; }
+/* monogram motif: a gold rule under the wordmark that ends in the mark's arrowhead */
+.fx-brand-word::before { content: ""; position: absolute; left: 2px; right: 8px; bottom: 2px; height: 2px; background: var(--fxb); border-radius: 1px; opacity: .9; pointer-events: none; transition: opacity .15s ease, right .15s ease; }
+.fx-brand-word::after { content: ""; position: absolute; right: 2px; bottom: 0; border-left: 6px solid var(--fxb); border-top: 3px solid transparent; border-bottom: 3px solid transparent; opacity: .9; pointer-events: none; }
+.fx-brand:hover .fx-brand-word::before, .fx-brand:hover .fx-brand-word::after { opacity: 1; }
 .fx-nav { margin-right: 2px; }
 .fx-nav a { text-decoration: none; }
 .fx-iconbtn { display: grid; place-items: center; height: 28px; width: 28px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
 .fx-iconbtn:hover { color: var(--ink); background: var(--well); }
-.fx-cta { flex-shrink: 0; border: 1px solid var(--fxb); border-radius: 999px; padding: 6px 14px; font-size: 11.5px; font-weight: 700; color: var(--fxb-ink); text-decoration: none; background: var(--fxb); transition: background .15s ease; }
+.fx-cta { flex-shrink: 0; border: 1px solid var(--fxb-tile); border-radius: 999px; padding: 6px 14px; font-size: 11.5px; font-weight: 700; color: var(--fxb-ink); text-decoration: none; background: var(--fxb-tile); transition: background .15s ease; }
 .fx-cta:hover { background: var(--fxb-hi); border-color: var(--fxb-hi); }
 
 /* sibling-site pills beside the brand */
@@ -53,7 +54,7 @@ body { font-family: var(--font-mono); }
 .fx-rail { position: relative; overflow: hidden; border-top: 0; border-bottom: 1px solid var(--line); margin: 0 -20px; padding: 7px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
 .fx-rail-track { display: flex; gap: 26px; width: max-content; animation: fxmarquee 60s linear infinite; will-change: transform; }
 .fx-rail:hover .fx-rail-track { animation-play-state: paused; }
-.fx-rail::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--spectrum); z-index: 1; }
+.fx-rail::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--fxb); z-index: 1; opacity: .85; }
 @keyframes fxmarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .fx-rail-track { animation: none; } }
 .fx-tick { display: flex; align-items: center; gap: 7px; font-size: 11px; white-space: nowrap; color: var(--muted); }
@@ -132,7 +133,7 @@ body { font-family: var(--font-mono); }
 /* converter */
 .fx-conv { margin-top: 16px; border-radius: 20px; background: color-mix(in srgb, var(--paper-2) 40%, transparent); padding-bottom: 1px; }
 .fx-conv-in { position: relative; overflow: hidden; margin-top: 8px; border-radius: 18px; border: 1px solid var(--line); background: var(--paper); padding: 20px 18px 18px; }
-.fx-conv-in::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--spectrum); }
+.fx-conv-in::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--fxb); }
 .fx-conv-grid { display: grid; grid-template-columns: 1.1fr 1fr auto 1fr; gap: 12px; align-items: end; }
 .fx-field { display: block; min-width: 0; }
 .fx-lab { display: block; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }

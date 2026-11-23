@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="FX Desks">
+  <!-- v12 THE MONOGRAM: F + X on a gold tile. The X is a two-way exchange arrow crossed by
+       a plain bar, so the letter and the idea (rates both ways) are one shape. -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="#e8b23a"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="14.5" fill="none" stroke="#000" stroke-opacity=".10"/>
+  <g fill="#141414">
+    <rect x="10" y="15" width="7.5" height="34" rx="1"/>
+    <rect x="10" y="15" width="18.5" height="7" rx="1"/>
+    <rect x="10" y="29" width="15" height="6.5" rx="1"/>
+  </g>
+  <g fill="#141414">
+    <!-- plain bar: NW to SE -->
+    <g transform="translate(44.5 32) rotate(45)"><rect x="-17" y="-3.4" width="34" height="6.8" rx="1"/></g>
+    <!-- two-way arrow: SW to NE, head at both ends -->
+    <g transform="translate(44.5 32) rotate(-45)">
+      <rect x="-10" y="-3.4" width="20" height="6.8"/>
+      <path d="M9 -8 L18.5 0 L9 8 Z"/>
+      <path d="M-9 -8 L-18.5 0 L-9 8 Z"/>
+    </g>
+  </g>
+</svg>
